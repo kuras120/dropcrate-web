@@ -14,18 +14,14 @@ services:
       - -s3=true
       - -s3.port=8333
     ports:
-      - "9333:9333"
-      - "8080:8080"
-      - "8888:8888"
-      - "8333:8333"
+      - "19333:9333"
+      - "18080:8080"
+      - "18888:8888"
+      - "18333:8333"
     volumes:
       - ./seaweedfs-data:/data
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:9333/cluster/status"]
-      interval: 5s
-      timeout: 3s
-      retries: 3
-      start_period: 5s
 
   postgres:
     image: postgres:17-alpine
@@ -34,7 +30,7 @@ services:
       POSTGRES_USER: dropcrate
       POSTGRES_PASSWORD: dropcrate
     ports:
-      - "5432:5432"
+      - "15432:5432"
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     healthcheck:

@@ -1,0 +1,23 @@
+### API docs (Spring)
+GET {{appBaseUrl}}/v3/api-docs
+Accept: application/json
+Authorization: Basic {{appBasicAuth}}
+
+###
+
+### Swagger UI (Spring)
+GET {{appBaseUrl}}/swagger-ui/index.html
+Accept: text/html
+Authorization: Basic {{appBasicAuth}}
+
+###
+
+### SeaweedFS master status
+GET {{seaweedMasterUrl}}/cluster/status
+Accept: application/json
+
+###
+
+### SeaweedFS volume status
+GET {{seaweedVolumeUrl}}/status
+Accept: application/json
